@@ -45,6 +45,96 @@
   text-overflow: unset !important;
 }
 
+/* Landing page: two equal columns with welcome text left, Get Started button right */
+.landing-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 1.5rem 0 1rem;
+  margin-bottom: 1rem;
+}
+.landing-top-text {
+  min-width: 0;
+}
+.landing-top-text > p {
+  margin: 0 !important;
+  opacity: 0.85;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+.landing-top-cta {
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 720px) {
+  .landing-top {
+    grid-template-columns: 1fr;
+  }
+  .landing-top-cta {
+    justify-content: flex-start;
+  }
+}
+
+/* Centered inline links row (Pricing · Discord · Releases) */
+.landing-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.08), rgba(139, 92, 246, 0.15), rgba(139, 92, 246, 0.08));
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 0.6rem;
+}
+.landing-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  color: hsl(268, 60%, 55%) !important;
+  transition: color 0.15s ease;
+}
+.landing-links a:hover {
+  color: hsl(268, 78%, 45%) !important;
+}
+.landing-links .link-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+.landing-links .link-sep {
+  opacity: 0.5;
+  user-select: none;
+  color: hsl(268, 40%, 55%);
+}
+.get-started-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  background: hsl(268, 78%, 58%);
+  color: #ffffff !important;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-decoration: none !important;
+  transition: background 0.15s ease;
+}
+.get-started-btn:hover {
+  background: hsl(268, 78%, 50%);
+}
+@media (max-width: 720px) {
+  .landing-top {
+    grid-template-columns: 1fr;
+  }
+  .landing-top-cta {
+    justify-content: flex-start;
+  }
+}
+
 /* Emphasize the "Get Started" entry in the left nav so it reads as the
    default starting point. Matches both dev href (/getting-started) and
    production href with basePath (/lightning-docs-redesign/getting-started). */

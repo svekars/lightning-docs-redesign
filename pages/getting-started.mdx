@@ -1,14 +1,14 @@
 ---
-title: Get started with Lightning AI
-description: Create an account, open a Studio, and run your first AI workload in 5 minutes. No credit card required.
+title: Get started
+description: Create an account, open a Studio, and run your first AI workload in 5 minutes.
 ---
 
 import { Cards, Steps, Callout } from 'nextra/components'
-import { LayoutTemplate, GitBranch, Cloud } from 'lucide-react'
+import { LayoutTemplate, GitBranch } from 'lucide-react'
 
 # Get Started
 
-Run your first AI workload in the cloud in 5 minutes. **No credit card needed.**
+Run your first AI workload in the cloud in 5 minutes.
 
 <Steps>
 
@@ -17,7 +17,7 @@ Run your first AI workload in the cloud in 5 minutes. **No credit card needed.**
 Go to **[lightning.ai/sign-up](https://lightning.ai/sign-up)** and create a free account.
 
 <Callout type="info">
-**No credit card required.** The free tier includes one always-on Studio, 100 GB of persistent storage, 30M model tokens per month, and free GPU hours once you verify.
+The free tier includes one always-on Studio, 100 GB of persistent storage, 30M model tokens per month, and free GPU hours once you verify.
 </Callout>
 
 ### Open your first Studio
@@ -36,19 +36,12 @@ Pick the path that matches what you brought with you:
 
 <Cards>
   <Cards.Card icon={<LayoutTemplate />} title="Clone a template (recommended)" href="https://lightning.ai/svekars-org/templates" arrow>
-    Browse featured templates, click Open in Studio, run. Fastest path to "I made something work."
+    Browse featured templates, click Clone. Start here if you don't yet have a project to work on.
   </Cards.Card>
   <Cards.Card icon={<GitBranch />} title="Connect your GitHub repo" href="https://lightning.ai/docs/platform/build/ai-studio" arrow>
     Bring your own code. Lightning pulls it into a Studio with dependencies installed.
   </Cards.Card>
-  <Cards.Card icon={<Cloud />} title="Connect your GPU provider" href="https://lightning.ai/docs/platform/byoc" arrow>
-    Use your own AWS, GCP, or other compute. Lightning manages the orchestration.
-  </Cards.Card>
 </Cards>
-
-<Callout type="default">
-**You just ran a real AI workload in the cloud.** From here, edit the code, swap to GPU hardware, or fork the template into your own project.
-</Callout>
 
 </Steps>
 
@@ -57,6 +50,7 @@ Pick the path that matches what you brought with you:
 - [Manage your AI Studio](https://lightning.ai/docs/platform/build/ai-studio)
 - [Enable AI in your Apps](/operations/enable-ai-quickstart)
 - [Run more examples](https://lightning.ai/templates)
+- [Bring Your Own Cloud](https://lightning.ai/pricing/)
 
 ## Need Help?
 
