@@ -1,0 +1,88 @@
+---
+title: Lightning AI Studio docs
+description: Develop in a cloud Studio, train on GPUs, deploy as APIs. All from your browser.
+---
+
+import { Cards, Tabs, Callout } from 'nextra/components'
+import {
+  Rocket, Package, Wrench, LayoutTemplate, DollarSign, MessageSquare,
+  Megaphone, MonitorPlay, Bot, BookOpen, Network, Cloud, Server, Cable,
+  Zap, Users, Receipt, Shield, Briefcase
+} from 'lucide-react'
+
+# Lightning AI Studio docs
+
+Lightning is the all-in-one AI development platform. Code in a cloud Studio, train on GPUs, and deploy as APIs, all from your browser. No setup. No managing infrastructure.
+
+<Cards num={3}>
+  <Cards.Card icon={<Rocket />} title="New to Lightning" href="/getting-started" arrow>
+    Create an account, open a Studio, and run your first AI workload in 5 minutes. No credit card.
+  </Cards.Card>
+  <Cards.Card icon={<Package />} title="Already signed up" href="https://lightning.ai/svekars-org/templates" arrow>
+    Open a Studio, clone a template, or bring your own code from GitHub.
+  </Cards.Card>
+  <Cards.Card icon={<Wrench />} title="Already building" href="https://lightning.ai/docs/platform/train" arrow>
+    Train on GPU, deploy as a scalable API, or orchestrate agents in production.
+  </Cards.Card>
+</Cards>
+
+<Cards>
+  <Cards.Card icon={<LayoutTemplate />} title="Templates" href="https://lightning.ai/templates" arrow />
+  <Cards.Card icon={<DollarSign />} title="Pricing" href="https://lightning.ai/pricing" arrow />
+  <Cards.Card icon={<MessageSquare />} title="Discord" href="https://discord.gg/MWAEvnC5fU" arrow />
+  <Cards.Card icon={<Megaphone />} title="Releases" href="https://lightning.ai/pages/releases/" arrow />
+</Cards>
+
+## Developer journey
+
+Follow the lifecycle, or jump to what you need.
+
+<Tabs items={['Build', 'Train', 'Deploy', 'Manage']}>
+  <Tabs.Tab>
+    **Build in a Studio.** Open a cloud-based dev machine with persistent storage and your IDE in the browser (or local via SSH). Switch CPU to GPU in one click.
+
+    <Cards>
+      <Cards.Card icon={<MonitorPlay />} title="Open a Studio" href="https://studio.lightning.ai" arrow />
+      <Cards.Card icon={<LayoutTemplate />} title="Browse templates" href="https://lightning.ai/templates" arrow />
+      <Cards.Card icon={<Bot />} title="Build an agent" href="https://lightning.ai/docs/platform/build/agents" arrow />
+    </Cards>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    **Train at scale.** Bring your own PyTorch or Lightning model. Use your free 80 GPU hours/month, or scale to multi-node when you need it.
+
+    <Cards>
+      <Cards.Card icon={<BookOpen />} title="Train quickstart" href="https://lightning.ai/docs/platform/train" arrow />
+      <Cards.Card icon={<Network />} title="Multi-node training" href="https://lightning.ai/docs/platform/train" arrow />
+      <Cards.Card icon={<Cloud />} title="Bring your own cloud" href="https://lightning.ai/docs/platform/byoc" arrow />
+    </Cards>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    **Deploy as APIs.** Wrap any inference engine with LitServe, or use hosted Model APIs. Deploy as scalable endpoints with autoscaling and observability.
+
+    <Cards>
+      <Cards.Card icon={<Server />} title="Inference overview" href="https://lightning.ai/docs/platform/inference" arrow />
+      <Cards.Card icon={<Cable />} title="Model APIs" href="https://lightning.ai/docs/platform/inference/model-apis" arrow />
+      <Cards.Card icon={<Zap />} title="LitServe" href="https://lightning.ai/docs/litserve" arrow />
+    </Cards>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    **Manage teams and billing.** Organize work in teamspaces, control access, and manage spend.
+
+    <Cards>
+      <Cards.Card icon={<Users />} title="Team management" href="https://lightning.ai/docs/platform/team-management" arrow />
+      <Cards.Card icon={<Receipt />} title="Billing & pricing" href="https://lightning.ai/pricing" arrow />
+      <Cards.Card icon={<Shield />} title="Security" href="https://lightning.ai/docs/platform/security" arrow />
+    </Cards>
+  </Tabs.Tab>
+</Tabs>
+
+## Why Lightning
+
+<Cards num={2}>
+  <Cards.Card icon={<Cloud />} title="The all-in-one AI cloud" href="/overview/why-lightning" arrow>
+    Traditional clouds weren't built for AI. Lightning unifies dev, train, and deploy in one platform so you skip the integration tax.
+  </Cards.Card>
+  <Cards.Card icon={<Briefcase />} title="Use cases" href="/overview/use-cases" arrow>
+    See how academia, startups, and enterprises use Lightning for research, production, and everything in between.
+  </Cards.Card>
+</Cards>

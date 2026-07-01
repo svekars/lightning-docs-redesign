@@ -1,0 +1,36 @@
+---
+title: Overview
+description: What Lightning is and where to start.
+---
+
+import { Cards } from 'nextra/components'
+import {
+  Rocket, BookOpen, LayoutTemplate, MessageSquare, DollarSign
+} from 'lucide-react'
+
+# Overview
+
+Lightning is the all-in-one AI development platform. Code in a cloud Studio, train on GPUs, and deploy as APIs, all from your browser.
+
+<Cards num={2}>
+  <Cards.Card icon={<Rocket />} title="Start here" href="/getting-started" arrow>
+    New to Lightning? Create an account, open a Studio, and run your first AI workload in 5 minutes.
+  </Cards.Card>
+  <Cards.Card icon={<BookOpen />} title="Why Lightning" href="/overview/why-lightning" arrow>
+    How Lightning differs from traditional clouds and the prototype-to-production model it's built around.
+  </Cards.Card>
+</Cards>
+
+## Other resources
+
+<Cards>
+  <Cards.Card icon={<LayoutTemplate />} title="Community templates" href="https://lightning.ai/templates" arrow>
+    350,000+ prebuilt projects to start from.
+  </Cards.Card>
+  <Cards.Card icon={<MessageSquare />} title="Discord" href="https://discord.gg/MWAEvnC5fU" arrow>
+    Ask the community.
+  </Cards.Card>
+  <Cards.Card icon={<DollarSign />} title="Pricing" href="https://lightning.ai/pricing" arrow>
+    Free tier details and paid plans.
+  </Cards.Card>
+</Cards>

@@ -1,0 +1,46 @@
+/* Card padding overrides — Nextra's default Card has zero side padding on the
+   description text and only 1rem on the title bar, so cards feel cramped. */
+
+.nextra-card {
+  min-height: 8.5rem;
+}
+
+.nextra-card > p {
+  padding: 1.25rem 1.5rem 0.5rem;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.nextra-card > span:last-child {
+  padding: 1rem 1.5rem 1.5rem !important;
+  font-size: 1rem;
+}
+
+.nextra-card svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* Tighten icon-only cards (no description) to a smaller height */
+.nextra-card:not(:has(> p)) {
+  min-height: 0;
+}
+
+.nextra-card:not(:has(> p)) > span:last-child {
+  padding: 1.25rem 1.5rem !important;
+}
+
+/* Slightly larger gap between cards */
+.nextra-cards {
+  gap: 1rem !important;
+  margin-top: 1.25rem !important;
+}
+
+/* Allow card titles to wrap instead of truncating with an ellipsis */
+.nextra-card > span:last-child > span {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+}

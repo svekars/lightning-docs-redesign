@@ -1,0 +1,117 @@
+---
+title: Wireframe — Getting Started (proposed)
+description: Structural wireframe for the new canonical Getting Started page, with annotations explaining the design rationale.
+---
+
+# Wireframe: Getting Started (proposed)
+
+Low-fi structural wireframe for the new canonical Getting Started page. This replaces the current `getting-started.md` AND `quick-start.md` (which today live as two competing pages).
+
+Annotations in [brackets] are wireframe notes, not page copy.
+
+## Page-level design principles
+
+Five rules this wireframe enforces:
+
+1. **One linear path through.** No choose-your-own-adventure at step zero.
+2. **5 minutes to first success.** Time anchor in the hero.
+3. **Surface the verification gate.** The single biggest activation killer becomes explicit.
+4. **Define what success looks like.** Every step ends with "you should see X."
+5. **Branching at the end, not the start.** Three next-step cards offered only after first success.
+
+## Visual layout
+
+```
+┌────────────────────────────────────────────────────────────────┐
+│ [HERO]                                                         │
+│   H1: Get started with Lightning AI                            │
+│   Subtitle: In 5 minutes you'll run your first AI workload.    │
+│   No credit card needed.                                       │
+│   [Positioning sentence — what Lightning is, in one line]      │
+│   [GIF: Studio open → terminal → output, looping]              │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│ [SECTION 1]  Create your account · ~1 min                      │
+│   Step 1.1: Sign up at lightning.ai/sign-up                    │
+│   Step 1.2: Verify to unlock GPU                               │
+│     ┌──────────────────────────────────────────────────────┐   │
+│     │ ⚡ VERIFICATION CALLOUT (prominent, colored)         │   │
+│     │ ┌────────────┬────────────────┬────────────┐         │   │
+│     │ │ Method     │ What you get   │ Speed      │         │   │
+│     │ ├────────────┼────────────────┼────────────┤         │   │
+│     │ │ .edu/work  │ 80 GPU hrs/mo  │ Instant    │         │   │
+│     │ │ Phone      │ 7 GPU hrs      │ Instant    │         │   │
+│     │ │ Personal   │ Waitlist       │ Hrs-days   │         │   │
+│     │ └────────────┴────────────────┴────────────┘         │   │
+│     └──────────────────────────────────────────────────────┘   │
+│   [SCREENSHOT: signup with verification options highlighted]   │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│ [SECTION 2]  Open your first Studio · ~1 min                   │
+│   Step 2.1: Click New Studio                                   │
+│   Step 2.2: Free CPU by default                                │
+│   [SCREENSHOT: empty Studio with hardware selector circled]    │
+│   [TOGGLE: "What is a Studio?" — collapsed by default]         │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│ [SECTION 3]  Run your first AI call · ~3 min                   │
+│   3.1: Open terminal                                           │
+│   3.2: pip install sentence-transformers                       │
+│   3.3: Create main.py (code block, copy button)                │
+│   3.4: Run python main.py                                      │
+│   3.5: ✓ Confirm output (semantic similarity scores)           │
+│     ┌──────────────────────────────────────────────────────┐   │
+│     │ 🎉 SUCCESS CALLOUT                                    │   │
+│     │ You just made your first AI call on Lightning.        │   │
+│     └──────────────────────────────────────────────────────┘   │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│ [SECTION 4]  What to do next                                   │
+│   ┌──────────────┐  ┌──────────────┐  ┌──────────────┐         │
+│   │ Train on GPU │  │ Deploy a     │  │ Build an     │         │
+│   │              │  │ model        │  │ agent        │         │
+│   │ → Quickstart │  │ → Quickstart │  │ → Quickstart │         │
+│   └──────────────┘  └──────────────┘  └──────────────┘         │
+│   [Below cards: 3 alternate-path links, demoted]               │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│ [SECTION 5]  Got stuck?                                        │
+│   - Phone verification failed?                                 │
+│   - Want higher tier?                                          │
+│   - Can't find a feature?                                      │
+│   - New to Lightning entirely? → Why Lightning                 │
+└────────────────────────────────────────────────────────────────┘
+
+[FOOTER NAV]
+← Platform Overview      Next: Train a model →
+```
+
+## Annotated decision table
+
+| Decision | Replaces today | Why |
+|---|---|---|
+| One linear path | Quickstart options A-E | Choose-your-own-adventure at step zero forces decisions users can't yet make. Stripe and Vercel both moved away from this pattern years ago. |
+| Verification gate is explicit | Hidden in FAQ today | The #1 activation killer in the current funnel. Marketing says "free GPU," UI prompts for credit card, the unlock path is undocumented in Getting Started. |
+| sentence-transformers embedding demo as first example | "Start building" link table with 12 destinations | Runs entirely on free CPU. No API keys (zero auth friction). Demonstrates real AI work, not just an API forward. Embeddings are the primitive behind RAG and search, so it lands as immediately relevant. |
+| Time anchors per section | Nothing today | "~1 min / ~1 min / ~3 min" sets commitment expectation. Drives completion rate. |
+| Success state defined per step | Not defined today | Users don't know if they succeeded. Today's docs end mid-stream with no "you should see X." |
+| 3 next-step cards | Two ~10-cell link tables | Decision fatigue. Three is the upper bound on "I can pick one." |
+| Why Lightning demoted to footer | Equal-weight card on current Overview | Marketing-style positioning belongs in Concepts, not first-touch. |
+| New section: Concepts | Mixed into Overview today | "Overview" should be navigational, not editorial. Concepts is where the "what is this" content lives. |
+
+## Open questions
+
+1. **What % of new accounts use a work/.edu email vs phone vs personal?** This determines whether the GPU verification table should default-show the email path or the phone path.
+2. **What's the current funnel from `/docs/platform/getting-started` to a user running their first job?** Without this we're optimizing blind.
+3. **Is sentence-transformers the right first example, or should it be PyTorch Lightning MNIST (the framework Lightning is famous for), or a LitAI hosted-model call (uses Lightning's own product)?** Current pick: sentence-transformers. Reasoning: zero auth friction, runs on free CPU, demonstrates real AI work. Counter-argument: doesn't use any Lightning-branded product, so the example doesn't sell the platform's stack. Worth user-testing all three.
+4. **Do we want an "I just want the API ref" jump-link at the top?** Stripe does this. Worth A/B testing.
+
+## See also
+
+- [The live page](/docs/platform/getting-started) (rendered version of the wireframe above)
+- [User journey diagram](/journey) (before/after flow)

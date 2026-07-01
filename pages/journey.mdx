@@ -1,0 +1,82 @@
+---
+title: User journey — current vs proposed
+description: Flow diagrams showing the new-developer journey on lightning.ai/docs today and under the proposed redesign.
+---
+
+# User journey: current vs proposed
+
+Both diagrams trace the same goal: a brand-new developer arriving at lightning.ai/docs wanting to run their first AI workload.
+
+## Today (current docs)
+
+```mermaid
+flowchart TD
+    A[Land on /docs/platform/overview] --> B{Empty page<br/>+ 6 equal cards}
+    B --> C[Getting Started?]
+    B --> D[Quickstart?]
+    B --> E[Why Lightning?]
+    B --> F[Setups?]
+    B --> G[Examples?]
+    B --> H[FAQ?]
+    C --> I[3-step list + 20 links]
+    D --> J[5 paths A-E]
+    I --> K[Sign up]
+    J --> K
+    K --> L[Studio opens on CPU]
+    L --> M[Try a template]
+    M --> N{Credit card prompt}
+    N -->|Pay| O[Continue]
+    N -->|Refuse| P[🛑 BOUNCE to Colab]
+
+    style B fill:#5a1a1a,stroke:#fff,color:#fff
+    style N fill:#5a1a1a,stroke:#fff,color:#fff
+    style P fill:#7a1f1f,stroke:#fff,color:#fff
+    style A fill:#1a2540,stroke:#fff,color:#fff
+```
+
+**Drop-off moments highlighted in red.** A new developer hits three friction points before they ever run code: choosing between 6 equally-weighted cards, choosing between two competing quickstarts, and a credit card prompt that's not explained anywhere in the docs.
+
+## Proposed redesign
+
+```mermaid
+flowchart TD
+    A[Land on /docs/platform/overview] --> B[Hero + 'Start here' CTA]
+    B --> C[Getting Started page]
+    C --> D[Sign up]
+    D --> E{Verify}
+    E -->|Work or .edu email| F[80 GPU hrs unlocked]
+    E -->|Phone| G[7 GPU hrs unlocked]
+    E -->|Personal email| H[Waitlist + Discord nudge]
+    F --> I[Open Studio]
+    G --> I
+    I --> J[Run sentence-transformers<br/>embedding demo on free CPU]
+    J --> K[🎉 First success]
+    K --> L{Pick next path}
+    L --> M[Train a model]
+    L --> N[Deploy a model]
+    L --> O[Build an agent]
+
+    style A fill:#1a2540,stroke:#fff,color:#fff
+    style B fill:#2d4a2d,stroke:#fff,color:#fff
+    style K fill:#2d4a2d,stroke:#fff,color:#fff
+    style E fill:#3d3a1a,stroke:#fff,color:#fff
+```
+
+**One linear path through first success.** Branching is offered only after the user has run something. The verification gate that unlocks free GPU access is made explicit, not hidden in FAQ.
+
+## What changed and why
+
+| Friction in current flow | Fix in redesign |
+|---|---|
+| Overview = 6 equal cards, no recommendation | One hero + "Start here" CTA pointing at Getting Started |
+| Getting Started AND Quickstart compete | Merged into one canonical path |
+| Quickstart uses choose-your-own-adventure (A-E) at step zero | One linear path; branching at the end |
+| Credit card prompt without context | Verification step (email/phone) made explicit before any template click |
+| "Free CPU, switch to GPU later" not actionable | Verification table tells you exactly what unlocks what |
+| Success state not defined | Every step ends with "you should see X" |
+| 20-link table for next steps | 3 prioritized cards |
+
+## Time-to-first-success target
+
+- **Current docs**: empirically 10+ min if user perseveres past the credit card prompt; many bounce before running anything.
+- **Redesign target**: 5 min from `/docs/platform/getting-started` to `python main.py` printing output. Validated against the actual signup + Studio + sentence-transformers install + run sequence.
