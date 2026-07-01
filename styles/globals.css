@@ -1,4 +1,4 @@
-/* Card padding overrides — Nextra's default Card has zero side padding on the
+/* Card padding overrides: Nextra's default Card has zero side padding on the
    description text and only 1rem on the title bar, so cards feel cramped. */
 
 .nextra-card {

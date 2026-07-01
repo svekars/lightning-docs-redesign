@@ -1,76 +1,25 @@
 ---
-title: "Enable AI in your Apps: Quickstart"
-description: Several ways to start building with AI on Lightning — API, AI copilot, prebuilt project, cloud GPU, or notebook.
+title: Enable AI in your Apps
+description: Add AI to your apps instantly with Lightning model APIs. Send a web request to a model and pay only for the tokens you use.
 ---
 
-import { Tabs } from 'nextra/components'
+# Enable AI in your Apps
 
-# Enable AI in your Apps: Quickstart
+Add AI to your apps instantly with Lightning model APIs. Send a simple web request to a model and only pay for the tokens you use. Every user gets 30 million free tokens per month.
 
-Lightning gives you several ways to start building with AI. Choose what you want to do:
+First, install `litai` (or use the OpenAI Python SDK if you prefer):
 
-<Tabs items={['Use a model (API)', 'Build with AI help', 'Prebuilt project', 'Cloud GPU', 'GPU notebook']}>
-  <Tabs.Tab>
-    **Use a model (API).** Add AI to your apps instantly with model APIs. Send a simple web request to a model and only pay for the tokens you use. Every user gets 30 million free tokens per month.
+```bash
+pip install litai
+```
 
-    First, install litAI (or use the OpenAI Python SDK if you prefer):
+Then call the model. Get your API key [here](https://lightning.ai/settings/api-keys).
 
-    ```bash
-    pip install litai
-    ```
+```python
+from litai import LLM
 
-    Then call the model. Get your API key [here](https://lightning.ai/settings/api-keys).
+llm = LLM(model="openai/gpt-5", api_key="<LIGHTNING_API_KEY>")
+print(llm.chat("Hello, world!"))
+```
 
-    ```python
-    from litai import LLM
-
-    llm = LLM(model="openai/gpt-5", api_key="<LIGHTNING_API_KEY>")
-    print(llm.chat("Hello, world!"))
-    ```
-
-    [Browse all 20+ models →](https://lightning.ai/models)
-  </Tabs.Tab>
-  <Tabs.Tab>
-    **Build with AI help.** The best entry point for beginners or anyone who wants assistance building AI.
-
-    Create an account (or open [studio.lightning.ai](https://studio.lightning.ai) if you're already logged in), then use an AI copilot to build an agent.
-
-    [Learn more about AI Studio →](https://lightning.ai/docs/platform/build/ai-studio)
-  </Tabs.Tab>
-  <Tabs.Tab>
-    **Start from a prebuilt project.** Visit the environments hub and describe what you want. Lightning's AI search finds the closest template from a community of 350,000+ developers.
-
-    [Visit the environments hub →](https://lightning.ai/templates)
-  </Tabs.Tab>
-  <Tabs.Tab>
-    **Code on a cloud GPU.** Build, train, or deploy on a persistent, collaborative GPU workspace that feels like a local laptop, with AI copilots at every step. Every user gets ~80 free GPU hours per month.
-
-    Start a Studio via [studio.lightning.ai](https://studio.lightning.ai) (defaults to CPU; upgrade to GPU later). Treat it like your laptop:
-
-    1. Open VSCode or JupyterLab in the browser, or connect your local IDE (VSCode, Cursor, PyCharm) via SSH
-    2. `git clone` your repo
-    3. `pip install` (or `uv pip install`) dependencies
-    4. Everything you install persists across restarts
-
-    For inspiration, clone the starter project:
-
-    ```bash
-    git clone https://github.com/Lightning-AI/hello-studio.git
-    cd hello-studio/rag-system
-    uv pip install -r requirements.txt
-
-    python scraper.py --page-limit 20 --update-every-hrs 24
-    python rag_server.py
-    python client.py "What is the Matrix?"
-    ```
-
-    [Learn more about AI Studio →](https://lightning.ai/docs/platform/build/ai-studio) · [Connect via SSH →](https://lightning.ai/docs/platform/build/ai-studio)
-  </Tabs.Tab>
-  <Tabs.Tab>
-    **Create a GPU notebook.** Go to [studio.lightning.ai](https://studio.lightning.ai) and click the JupyterLab icon on the right side.
-
-    [All about notebooks →](https://lightning.ai/docs/platform/build/notebooks)
-  </Tabs.Tab>
-</Tabs>
-
-Once you're up and running, use **Ask AI** (bottom-right of any Studio) to explore whatever you want to do next.
+[Browse all 20+ models →](https://lightning.ai/models)
