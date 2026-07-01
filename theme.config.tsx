@@ -13,8 +13,10 @@ const config: DocsThemeConfig = {
       </span>
     )
   },
-  primaryHue: 268,
-  primarySaturation: 78,
+  color: {
+    hue: 268,
+    saturation: 78
+  },
   search: {
     placeholder: 'Search docs...'
   },
@@ -34,10 +36,7 @@ const config: DocsThemeConfig = {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="description" content="Proposed redesign of lightning.ai/docs" />
     </>
-  ),
-  useNextSeoProps() {
-    return { titleTemplate: '%s – Lightning AI Studio docs' }
-  }
+  )
 }
 
 export default config
