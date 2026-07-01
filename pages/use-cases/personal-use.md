@@ -26,5 +26,3 @@ Lightning is perfect for homework, group projects, and hackathons. See the dedic
 - New here? Start at [Get started](/docs/platform/getting-started).
 - Want a real persistent dev env? See [AI Studio](https://lightning.ai/docs/platform/build/ai-studio).
 - Need to share with collaborators? See [Teamspaces](https://lightning.ai/docs/platform/team-management/teamspaces).
-
-> **Migration note:** Consolidates `setups/personal-use/the-side-project`, `new-page-4x6h5`, `the-work-project`, `work-projects`, `students`. Four of these were near-duplicates of each other; one URL was an unrenamed CMS auto-slug.

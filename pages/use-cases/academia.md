@@ -50,5 +50,3 @@ Lightning scales to institution-wide use. Centralized billing, IT-friendly admin
 - Personal use? Start at [Get started](/docs/platform/getting-started).
 - Setting up for a class or lab? See [Teamspaces](https://lightning.ai/docs/platform/team-management/teamspaces) and [Bring your own cloud](https://lightning.ai/docs/platform/gpu-cloud/bring-your-own-cloud).
 - Need institution-wide setup? Contact [support@lightning.ai](mailto:support@lightning.ai) or your account team.
-
-> **Migration note:** This page consolidates 9 previously separate sub-pages under `setups/academia/` (academic-conferences, academic-institutions, classrooms, research-labs, research-project, research-projects, students, university, university-class, university-research-lab). 6 of those were near-duplicates of each other. All content preserved here as anchored sections.

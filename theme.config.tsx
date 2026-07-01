@@ -7,11 +7,7 @@ const config: DocsThemeConfig = {
   editLink: { component: null },
   feedback: { content: null },
   footer: {
-    content: (
-      <span>
-        Take-home prototype. Not affiliated with Lightning AI.
-      </span>
-    )
+    content: ''
   },
   color: {
     hue: 268,

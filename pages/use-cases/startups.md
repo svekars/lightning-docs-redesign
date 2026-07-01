@@ -36,5 +36,3 @@ You're supporting real traffic and growing the team. Your needs shift toward gov
 - Need a managed team setup? See [Teamspaces](https://lightning.ai/docs/platform/team-management/teamspaces).
 - Scaling to multi-node training? See [Multi-node training](https://lightning.ai/docs/platform/train/multi-node).
 - Negotiated GPU pricing? See [Bring your own cloud](https://lightning.ai/docs/platform/gpu-cloud/bring-your-own-cloud).
-
-> **Migration note:** Consolidates `setups/startups/idea-phase`, `early-stage`, `growth`. The page `setups/enterprise/startups` was an exact duplicate of `setups/startups` and was removed.

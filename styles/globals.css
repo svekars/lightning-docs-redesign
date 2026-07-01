@@ -44,3 +44,18 @@
   overflow: visible !important;
   text-overflow: unset !important;
 }
+
+/* Emphasize the "Get Started" entry in the left nav so it reads as the
+   default starting point. Matches both dev href (/getting-started) and
+   production href with basePath (/lightning-docs-redesign/getting-started). */
+.nextra-sidebar-container a[href$="/getting-started"],
+.nextra-sidebar-container a[href$="/getting-started/"] {
+  font-weight: 700 !important;
+  color: hsl(268, 78%, 62%) !important;
+}
+
+.nextra-sidebar-container a[href$="/getting-started"]::before,
+.nextra-sidebar-container a[href$="/getting-started/"]::before {
+  content: "→ ";
+  margin-right: 0.15rem;
+}

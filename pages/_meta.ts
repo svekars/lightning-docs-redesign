@@ -10,6 +10,8 @@ export default {
   },
   'getting-started': 'Get Started',
   overview: 'Overview',
+  operations: 'Operations',
+  'whats-new': "What's New",
   templates: {
     title: 'Templates',
     type: 'page',
@@ -26,5 +28,9 @@ export default {
     title: 'Platform',
     type: 'page',
     href: '/docs/platform/getting-started'
+  },
+  'use-cases': {
+    title: 'Use Cases',
+    type: 'page'
   }
 }

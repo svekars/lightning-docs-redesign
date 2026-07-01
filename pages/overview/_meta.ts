@@ -4,5 +4,6 @@ export default {
     display: 'hidden'
   },
   'why-lightning': 'Why Lightning',
-  'use-cases': 'Use Cases'
+  concepts: 'Concepts',
+  compare: 'Compare'
 }

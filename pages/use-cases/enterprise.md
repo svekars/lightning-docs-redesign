@@ -34,5 +34,3 @@ Lightning gives infra and MLOps teams tools to support researchers without becom
 - For team setup, see [Teamspaces](https://lightning.ai/docs/platform/team-management/teamspaces) and [Organizations](https://lightning.ai/docs/platform/team-management/organizations).
 - For private cloud or on-prem, see [Bring your own cloud](https://lightning.ai/docs/platform/gpu-cloud/bring-your-own-cloud).
 - For onboarding a large team, contact your account team or [support@lightning.ai](mailto:support@lightning.ai).
-
-> **Migration note:** Consolidates `setups/enterprise/enterprise-teams`, `frontier-labs`, `infrastructure-admin-tools`, `ml-use-case`, `model-development`, `research-project`. The `setups/enterprise/startups` and `setups/enterprise/research-project` pages were exact duplicates of pages elsewhere and were removed.
