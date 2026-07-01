@@ -76,6 +76,16 @@
   }
 }
 
+/* Constrain content screenshots to a sensible size. Targets images with
+   alt text so icons (SVGs) and empty-alt decorative images aren't affected. */
+main img[alt]:not([alt=""]) {
+  max-width: 560px;
+  height: auto;
+  display: block;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+}
+
 /* Centered inline links row (Pricing · Discord · Releases) */
 .landing-links {
   display: flex;

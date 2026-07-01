@@ -3,8 +3,7 @@ title: Get started
 description: Create an account, open a Studio, and run your first AI workload in 5 minutes.
 ---
 
-import { Cards, Steps, Callout } from 'nextra/components'
-import { LayoutTemplate, GitBranch } from 'lucide-react'
+import { Cards, Steps, Tabs, Callout } from 'nextra/components'
 
 # Get Started
 
@@ -34,14 +33,102 @@ Your Studio opens on free CPU. Switch to GPU anytime using the hardware selector
 
 Pick the path that matches what you brought with you:
 
-<Cards>
-  <Cards.Card icon={<LayoutTemplate />} title="Clone a template (recommended)" href="https://lightning.ai/svekars-org/templates" arrow>
-    Browse featured templates, click Clone. Start here if you don't yet have a project to work on.
-  </Cards.Card>
-  <Cards.Card icon={<GitBranch />} title="Connect your GitHub repo" href="https://lightning.ai/docs/platform/build/ai-studio" arrow>
-    Bring your own code. Lightning pulls it into a Studio with dependencies installed.
-  </Cards.Card>
-</Cards>
+- **Start from a Prebuilt Template** — Best if you don't have a project yet. Clone a working template and run it in one click.
+- **Build with AI** — Use Copilot inside a Studio to build an agent or app with AI assistance.
+- **Bring your Own Repo** — Clone a GitHub repo into a Studio and treat it like your laptop.
+- **Connect from your Machine** — Keep using your local IDE (VSCode, Cursor, PyCharm) over SSH while the Studio runs remotely.
+- **Create a GPU notebook** — Launch JupyterLab in a Studio for interactive work.
+
+<Tabs items={['Start from a Prebuilt Template', 'Build with AI', 'Bring your Own Repo', 'Connect from your Machine', 'Create a GPU notebook']}>
+  <Tabs.Tab>
+    Start here if you don't yet have a project to work on.
+
+    1. Go to **[Templates](https://lightning.ai/svekars-org/templates)**.
+    2. Select a template to run.
+    3. Click **Clone**.
+    4. Follow the steps in the template to run it.
+  </Tabs.Tab>
+  <Tabs.Tab>
+    The best entry point for beginners or anyone who wants assistance building AI.
+    
+    1. Open AI Studio at [studio.lightning.ai](https://studio.lightning.ai/)
+    2. Use Copilot to build an agent. See this video for a quick demo:
+
+    <video
+      src="https://assets.lightning.ai/app-2/agent_tutorial.mp4"
+      controls
+      playsInline
+      style={{ width: '100%', maxWidth: '720px', borderRadius: '0.5rem', marginTop: '0.5rem' }}
+    />
+
+    [Learn more about AI Studio →](https://lightning.ai/docs/platform/build/ai-studio)
+  </Tabs.Tab>
+  <Tabs.Tab>
+    Bring your own code from GitHub. Below is a walkthrough with the `hello-studio` starter project.
+
+    1. Clone any repo into a Studio (just like your laptop). For example:
+
+    ```bash
+    git clone https://github.com/Lightning-AI/hello-studio.git
+    ```
+
+    2. Setup env your environment by installing all the needed dependencies:
+
+    ```bash
+    cd hello-studio/rag-system
+    uv pip install -r requirements.txt
+    ```
+    
+    Installs persist across restarts. Use `pip` or `uv`, whatever you prefer.
+
+    3. **Example:** Scrape data to create a knowledge base for the RAG system.
+    Real systems re-run every few hours to keep the knowledge base fresh:
+
+    ```bash
+    python scraper.py --page-limit 20 --update-every-hrs 24
+    ```
+
+    4. **Example:** Start RAG server. In a separate terminal window, start the RAG server.
+    You'll now have two live servers running on the Studio:
+
+    ```bash
+    python rag_server.py
+    ```
+
+    5. **Example:** Test the server. Test the RAG server to make sure it's working:
+
+    ```bash
+    python client.py "What is the Matrix?"
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    If you prefer to work locally rather that in the browser, you can connect a local
+    IDE and treat the Studio like your laptop, with all changes happening on the remote instance.
+    Here is the example of how to connect VSCode:
+
+    1. In the right hand panel, select your preferred IDE.
+    2. Paste the `curl` command into your terminal.
+    3. Install the remote-ssh VSCode plugin.
+    4. Press F1 an run the command Remote: SSH Open SSH Host".
+    5. Paste the command from the Lightning AI Studio to connect.
+    6. Follow the prompts to connect.
+
+    See the video below for more details:
+
+    <video
+      src="https://assets.lightning.ai/Docs_Studios_MP4/Docs_Studios_ConnectLocalIDE_ConnectSSH.mp4"
+      controls
+      playsInline
+      style={{ width: '100%', maxWidth: '720px', borderRadius: '0.5rem', marginTop: '0.5rem' }}
+    />
+
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+    Start a notebook by visiting [studio.lightning.ai](https://studio.lightning.ai),
+    then click on the JupyterLab icon on the right side.
+  </Tabs.Tab>
+</Tabs>
 
 </Steps>
 
